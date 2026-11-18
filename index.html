@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spawn In Vice Automation — Official Creator Publishing Hub</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.55;
+    }
+    .topbar {
+      background: #0f172a;
+      color: #f8fafc;
+      border-bottom: 1px solid #1e293b;
+      padding: 14px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.3px;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #f43f5e, #f59e0b);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 14px;
+      color: #ffffff;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+    }
+    .nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .nav a.pill {
+      background: #1e293b;
+      border: 1px solid #334155;
+      padding: 6px 14px;
+      border-radius: 999px;
+      color: #38bdf8;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 36px 28px 44px;
+    }
+    .hero {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 34px 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      box-shadow: 0 6px 24px rgba(15, 23, 42, 0.05);
+    }
+    .hero-left {
+      max-width: 680px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: #0369a1;
+      background: #e0f2fe;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 34px;
+      line-height: 1.18;
+      color: #0f172a;
+    }
+    .lead {
+      margin: 0 0 20px 0;
+      font-size: 16px;
+      color: #475569;
+    }
+    .yt-badge-box {
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px 24px;
+      min-width: 280px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    }
+    .yt-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .yt-wordmark {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .yt-sub {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #334155;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin: 4px 0 10px 0;
+    }
+    .yt-channel-btn {
+      display: inline-block;
+      background: #ff0000;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-primary {
+      background: #0f172a;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 18px;
+      border-radius: 8px;
+    }
+    .btn-outline {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 18px;
+      border-radius: 8px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .card h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      color: #0f172a;
+    }
+    .card p {
+      margin: 0;
+      font-size: 14px;
+      color: #475569;
+    }
+    .compliance-bar {
+      margin-top: 24px;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .compliance-bar h3 {
+      margin: 0 0 4px 0;
+      font-size: 16px;
+      color: #0c4a6e;
+    }
+    .compliance-bar p {
+      margin: 0;
+      font-size: 13.5px;
+      color: #334155;
+    }
+    .compliance-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .compliance-links a {
+      color: #0284c7;
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12.5px;
+      color: #64748b;
+    }
+    footer a {
+      color: #0284c7;
+      text-decoration: underline;
+      margin-left: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">SV</span>
+      <span>Spawn In Vice Automation</span>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="privacy.html" class="pill">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="https://www.youtube.com/@spawninvice" target="_blank" rel="noopener">YouTube Channel</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <span class="tag">Internal Single-Owner Creator Tool</span>
+        <h1>Spawn In Vice Automation</h1>
+        <p class="lead">
+          Private, owner-operated publishing workflow for the independent gaming commentary channel
+          <strong>@spawninvice</strong>. Renders original daily 1080&times;1920 vertical gaming Shorts and uploads
+          one scheduled video per day directly to the owner's YouTube channel via the official YouTube Data API v3.
+        </p>
+        <div class="cta-row">
+          <a class="btn-primary" href="privacy.html">Read Privacy Policy</a>
+          <a class="btn-outline" href="terms.html">Read Terms of Service</a>
+          <a class="btn-outline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+        </div>
+      </div>
+
+      <div class="yt-badge-box">
+        <div class="yt-lockup">
+          <svg width="44" height="31" viewBox="0 0 44 31" aria-label="YouTube logo">
+            <rect width="44" height="31" rx="7" fill="#FF0000" />
+            <polygon points="18,9.5 18,21.5 29,15.5" fill="#FFFFFF" />
+          </svg>
+          <span class="yt-wordmark">YouTube</span>
+        </div>
+        <div class="yt-sub">Developed with YouTube API Services</div>
+        <a class="yt-channel-btn" href="https://www.youtube.com/@spawninvice" target="_blank" rel="noopener">
+          Visit @spawninvice on YouTube
+        </a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Strictly Minimal Scope</h3>
+        <p>
+          Requests only <code>https://www.googleapis.com/auth/youtube.upload</code> and invokes a single endpoint
+          (<code>videos.insert</code>) once per day (~1,600 units / 10,000 daily default quota).
+        </p>
+      </div>
+      <div class="card">
+        <h3>Private Owner-Only Access</h3>
+        <p>
+          Not open to third-party registrations or public sign-ins. Authorized exclusively by the channel owner
+          using OAuth 2.0 Desktop flow with encrypted secret storage.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Zero Data Storage</h3>
+        <p>
+          Does not collect, scrape, cache, or share any YouTube user data, comments, or channel analytics.
+          Access can be revoked anytime via Google Security Settings.
+        </p>
+      </div>
+    </section>
+
+    <section class="compliance-bar">
+      <div>
+        <h3>YouTube API Services Compliance &amp; Legal Policies</h3>
+        <p>
+          Spawn In Vice Automation uses YouTube API Services and complies with the YouTube Terms of Service
+          and Google Privacy Policy.
+        </p>
+      </div>
+      <div class="compliance-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        &copy; 2026 Spawn In Vice (@spawninvice) &middot; Independent fan creator page; not affiliated with Rockstar Games, Take-Two Interactive, or YouTube/Google. Contact: <strong>spawninvice@gmail.com</strong>
+      </div>
+      <div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
